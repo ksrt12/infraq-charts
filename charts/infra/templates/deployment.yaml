@@ -101,6 +101,13 @@ spec:
         - name: certificate-authority
           secret:
             secretName: {{ include "connector.fullname" . }}-certificate-authority
+            {{- if .Values.config.useCertManager }}
+            items:
+              - key: ca.crt
+                path: ca.crt
+              - key: tls.key
+                path: ca.key
+            {{- end }}
         - name: access-key
           secret:
 {{- if .Values.config.accessKey }}

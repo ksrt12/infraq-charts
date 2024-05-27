@@ -35,6 +35,9 @@ config:
     ## PEM encoded CA certificate of the server
     trustedCertificate: ""
 
+  # Use cert-manager to manage certificate
+  useCertManager: false
+
   ## Path to CA and private key
   caCert: /var/run/secrets/infrahq.com/certificate-authority/ca.crt
   caKey: /var/run/secrets/infrahq.com/certificate-authority/ca.key
